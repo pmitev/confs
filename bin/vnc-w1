@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#/opt/TigerVNC/bin/vncserver :1 -br -geometry 1920x1080
+vncserver :1 -br -geometry 1920x1080 -geometry 1280x800 -geometry 1366x768 -geometry 1024x768
+
+#LD_LIBRARY_PATH=/home/pmitev/opt/tigervnc-1.6.0/usr/lib64/tigervnc/:$LD_LIBRARY_PATH
+#export PATH=/home/pmitev/opt/tigervnc-1.6.0/usr/bin/:$PATH
+#/home/pmitev/opt/tigervnc-1.6.0/usr/bin/vncserver :1 -br -geometry 1920x1080 -geometry 1280x800 -geometry 1366x768 -geometry 1024x768

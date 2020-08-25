@@ -1,0 +1,20 @@
+# conda env create -f ~/GIT/confs/conda/ase-jupyter.yaml
+name: ase-jupyter
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator
+  - matplotlib
+  - seaborn
+  - ipywidgets
+  - ipyparallel
+  - nglview
+  - ase
+  - pymatgen
+  - phonopy
+  - jmol
+  - pandas
+  - lxml

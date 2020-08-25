@@ -1,0 +1,11 @@
+# sshfs rackham:/sw /sw
+
+module use /sw/mf/rackham/applications
+module use /sw/mf/rackham/build-tools
+module use /sw/mf/rackham/compilers
+module use /sw/mf/rackham/data
+module use /sw/mf/rackham/environment
+module use /sw/mf/rackham/libraries
+module use /sw/mf/rackham/parallel
+
+# umount /sw

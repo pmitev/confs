@@ -1,0 +1,8 @@
+if [ -r /home/pmitev/bin/crystal09/cry2k9.bashrc ]; then
+  #---CRYSTAL09-----------------------------------
+  source /home/pmitev/bin/crystal09/cry2k9.bashrc 
+  echo Crystal09: $CRY2K9_ARCH 
+  #-----------------------------------------------
+else
+  echo ">>> Problems sourcing the environment !!!" 
+fi

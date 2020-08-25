@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+
+set prompt "(%|#|]>|\\$) $"                ;# default prompt
+catch {set prompt $env(EXPECT_PROMPT)}
+
+eval spawn ssh $argv
+set timeout 60
+expect eof exit timeout {send_user "timed out\n"; exit} -re $prompt
+send "cd [pwd]\r"
+interact

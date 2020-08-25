@@ -1,0 +1,24 @@
+#export OMP_NUM_THREADS=1
+#export MKL_SERIAL=yes
+#export GOTO_NUM_THREADS=1
+
+#if [ $HOSTNAME == "ppc" ]; then
+# export LIBGL_ALWAYS_INDIRECT=y
+#fi
+
+alias mc='source /usr/libexec/mc/mc-wrapper.sh'
+#alias ll='ls -l --group-directories-first'
+
+export SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/.SINGULARITY_CACHEDIR
+export SINGULARITY_TMPDIR=/crex/proj/staff/pmitev/.SINGULARITY_TMPDIR
+
+export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/conda_envs
+#export CONDA_PKGS_DIRS=
+
+export UDOCKER_DIR=/crex/proj/staff/pmitev/udocker
+export PROOT_NO_SECCOMP=1
+
+function userproj() { 
+    local U=${1:-$USER}
+    sacctmgr -n list assoc where user=$U -P format=account | cat <(id -Gn $U | tr ' ' '\n') - | sort -Vu | grep -vP "($U|no_project)"
+}

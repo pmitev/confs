@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -o errexit
+
+if [[ -z $SSH_AUTH_SOCK ]]; then
+        >&2 echo "can't revive agent: SSH_AUTH_SOCK not set"
+        exit 1
+fi
+
+SSH_AUTH_DIR=$(dirname $SSH_AUTH_SOCK)
+if [ ! -d $SSH_AUTH_DIR ]; then mkdir $SSH_AUTH_DIR; fi
+rm -f $SSH_AUTH_SOCK
+chmod go-rwx $SSH_AUTH_DIR
+ssh-agent -a $SSH_AUTH_SOCK

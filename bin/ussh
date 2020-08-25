@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set prompt "(%|#|]>|\\$) $"                ;# default prompt
+catch {set prompt $env(EXPECT_PROMPT)}
+
+eval spawn ssh $argv
+set timeout 60
+set uppmax [exec UPPMAX]
+expect {
+  "Please enter the current code from your second factor:" { send "[exec UPPMAX]\r" }
+   eof exit timeout {send_user "timed out\n"; exit} -re $prompt
+}
+
+interact

@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import sys,os
+import geoip2.database
+
+geoip= geoip2.database.Reader(os.environ['HOME']+'/bin/'+'GeoLite2-Country.mmdb')
+
+ip= sys.argv[1]
+
+try:
+  ip_country= geoip.country(ip).country.iso_code
+except:
+  ip_country= 'na'
+
+print(ip_country)

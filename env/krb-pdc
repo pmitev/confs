@@ -1,0 +1,3 @@
+export KRB5_CONFIG=$HOME/bin/travelkit/krb5-pdc.conf
+export KRB5CCNAME=/tmp/$USER-krb5-pdc
+#alias kinit='$HOME/bin/travelkit/kinit -f --no-addresses'

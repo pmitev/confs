@@ -1,0 +1,37 @@
+#!/bin/sh
+#############################################################################
+#                                                                           #
+# GNU License - Author: Pavlin  Mitev                          2004-08-14   #
+# Version 0.1                                                               #
+#                                                                           #
+# Combines the output from ps-plotMD                                        #
+#                                                                           #
+# Syntax:                                                                   #
+# Run the program w/t parameters for details                                #
+#                                                                           #
+#############################################################################
+id=`id -un`
+export outf="/tmp/joined."$$".ps"
+
+lhost=$(hostname -f)
+ldate=$(date)
+lpwd=$(pwd)
+
+orient=$(grep -c "%%Orientation:.*andscape" $1)
+
+echo "Host: "$lhost > /tmp/eplot1."$$".txt
+echo "Date: "$ldate >> /tmp/eplot1."$$".txt
+echo "File: "$lpwd"/"$1 >> /tmp/eplot1."$$".txt
+
+if [ "$orient" == "1" ]; then
+  a2ps -1Bqr -f 10 --borders=no /tmp/eplot1."$$".txt -o /tmp/eplot2."$$".ps
+  #enscript /tmp/eplot1."$$".txt -o /tmp/eplot2."$$".ps -B -r -M A4
+else
+  a2ps -1Bq  -f 10 --borders=no /tmp/eplot1."$$".txt -o /tmp/eplot2."$$".ps
+  #enscript /tmp/eplot1."$$".txt -o /tmp/eplot2."$$".ps -B  -M A4
+fi
+sed -e "s/showpage//" $1 > /tmp/eplot."$$".ps
+gs -dNOPAUSE -sDEVICE=pswrite -dLanguageLevel=2 -dSAFER -dFIXEDMEDIA -sPAPERSIZE=a4 -sOutputFile=/tmp/eplot3."$$".ps /tmp/eplot."$$".ps /tmp/eplot2."$$".ps  -c quit -q > /dev/null
+gv /tmp/eplot3."$$".ps
+
+rm /tmp/eplot1."$$".txt /tmp/eplot2."$$".ps /tmp/eplot3."$$".ps

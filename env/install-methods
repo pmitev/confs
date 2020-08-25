@@ -1,0 +1,2 @@
+export PATH=$PATH:$HOME/GIT/install-methods
+source $HOME/GIT/install-methods/uppmax_functions.sh

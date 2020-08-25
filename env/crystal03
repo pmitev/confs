@@ -1,0 +1,9 @@
+if [ -r /home/pmitev/bin/crystal03/utils03/cry2k3.bashrc ]; then
+  #---CRYSTAL03-----------------------------------
+  export PATH="/home/pmitev/bin/crystal03:$PATH"
+  source /home/pmitev/bin/crystal03/utils03/cry2k3.bashrc > /dev/null
+  echo Crystal03: $CRY2K6_ARCH 
+  #-----------------------------------------------
+else
+  echo ">>> Problems sourcing the environment !!!" 
+fi

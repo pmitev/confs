@@ -1,0 +1,22 @@
+#!/usr/bin/awk -f
+#############################################################################
+#                                                                           #
+# GNU License - Author: Pavlin  Mitev                          2004-08-14   #
+# Version 0.1                                                               #
+#                                                                           #
+#############################################################################a
+BEGIN{
+  printf"splot \""ARGV[1]"\" u 3:4:5  i 0 w l lt 1"
+}
+
+{
+  if (NF == 0) eline++
+  if (eline == 2 ) {
+    i++
+    printf ",\"\" u 3:4:5 i "i" w l lt "i+1
+    eline=0 
+  }
+  if (NF  > 0) eline= 0
+}
+
+END{print ""}

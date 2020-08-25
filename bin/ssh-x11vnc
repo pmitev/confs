@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#ssh -t -L 5910:localhost:5900 "$1" "/usr/bin/x11vnc -localhost -find"
+ssh -t -L 5910:localhost:5900 "$1" "/usr/bin/x11vnc -localhost -display :0"

@@ -1,0 +1,8 @@
+if [ -r /home/pmitev/Programs/xcrysden-1.5.53-bin-semishared/xcrysden ]; then
+  XCRYSDEN_TOPDIR=$HOME/Programs/xcrysden-1.5.53-bin-semishared
+  XCRYSDEN_SCRATCH=/tmp
+  export XCRYSDEN_TOPDIR XCRYSDEN_SCRATCH
+  PATH="$XCRYSDEN_TOPDIR:$PATH:$XCRYSDEN_TOPDIR/scripts:$XCRYSDEN_TOPDIR/util"
+else
+  echo ">>> Problems sourcing the environment !!!" 
+fi

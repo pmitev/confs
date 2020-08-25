@@ -1,0 +1,28 @@
+#!/bin/csh
+# Requires:    gnuplot 3.6 (beta)
+# Description: enables wildcards expansion
+# Usage:       `mplot 1 5 file*`
+# Notes:       expands file* and plots column 1 against column 5
+
+# get columns
+set x=$1
+set y=$2
+# remove from csh's command line
+shift; shift
+
+# obtain number of datasets
+set plots=`echo $* | wc -w`
+set line=0
+
+# process gnuplot's command line
+foreach file ($*)
+      if ($line == 0) then
+            echo -n plot \"$file\" u $x : $y with lp, 
+      else if ($line == ($plots - 1) ) then  
+            echo \"$file\" u $x : $y with  lp 
+      else
+            echo -n \"$file\" u $x : $y with lp, 
+      endif
+      set line=`expr $line + 1`
+end
+
