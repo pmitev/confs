@@ -18,3 +18,4 @@ dependencies:
   - jmol
   - pandas
   - lxml
+  - rise
