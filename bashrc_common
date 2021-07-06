@@ -1,5 +1,6 @@
 # vim:set foldmarker=#-#,#.# foldmethod=marker:
 #=================================================================
+# test -s ~/GIT/confs/bashrc_common && source ~/GIT/confs/bashrc_common
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
