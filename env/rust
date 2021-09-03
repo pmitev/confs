@@ -1,1 +1,4 @@
 source $HOME/.cargo/env
+
+# update run
+# rustup update
