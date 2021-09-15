@@ -1,0 +1,1 @@
+export PATH=$PATH:${HOME}/opt/julia-1.6.1/bin
