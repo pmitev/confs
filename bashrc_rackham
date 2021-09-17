@@ -8,10 +8,10 @@
 
 alias mc='source /usr/libexec/mc/mc-wrapper.sh'
 #alias ll='ls -l --group-directories-first'
-alias sallocM1h='salloc  -A staff -M snowy -t   01:00:00'
-alias sallocM10h='salloc -A staff -M snowy -t   10:00:00'
-alias sallocM1d='salloc  -A staff -M snowy -t 1-00:00:00'
-alias interactiveM='interactive -A staff -M snowy'
+alias srunSnowy1h='salloc  -A staff -M snowy -t   01:00:00'
+alias srunSnowy10h='salloc -A staff -M snowy -t   10:00:00'
+alias srunSnowy1d='salloc  -A staff -M snowy -t 1-00:00:00'
+alias interactiveSnowy='interactive -A staff -M snowy'
 
 
 export SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/.SINGULARITY_CACHEDIR
