@@ -49,6 +49,7 @@ alias bssh='ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -o 
 alias bscp='scp -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR '
 
 alias mc='source /usr/lib/mc/mc-wrapper.sh'
+alias xmgrace='xmgrace -geometry 1230x900'
 
 alias beep='echo -en "\007"'
 alias rpminfo='rpm -qivlp --scripts'
