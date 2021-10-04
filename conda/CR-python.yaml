@@ -1,0 +1,17 @@
+# conda env create -f ~/GIT/confs/conda/coderefinery.yaml
+name: CR-python
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>3.7
+  - jupyterlab
+  - jupyterlab-git
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+  - pip
+#  - pip:
+#    - jupyterlab-github==2.0.0
