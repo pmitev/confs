@@ -1,4 +1,4 @@
-# conda env create -f ~/GIT/confs/conda/coderefinery.yaml
+# conda env create -f ~/GIT/confs/conda/CR-python.yaml
 name: CR-python
 channels:
   - conda-forge
@@ -6,6 +6,7 @@ channels:
 dependencies:
   - python>3.7
   - jupyterlab
+  - nodejs
   - jupyterlab-git
   - matplotlib
   - numpy
