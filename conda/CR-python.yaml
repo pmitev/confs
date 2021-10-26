@@ -13,6 +13,9 @@ dependencies:
   - pandas
   - scipy
   - seaborn
+  - h5py
+  - netcdf4
+  - pytables  
   - pip
 #  - pip:
 #    - jupyterlab-github==2.0.0
