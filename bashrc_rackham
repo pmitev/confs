@@ -12,6 +12,7 @@ alias srunR='srun -A staff          -t 15:00 -p devel'
 alias srunS='srun -A staff -M snowy -t 15:00 -p devel'
 alias bashS='srun -A staff -M snowy -t 15:00 -p devel --pty bash'
 
+export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
 export SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/.SINGULARITY_CACHEDIR
 export SINGULARITY_TMPDIR=/crex/proj/staff/pmitev/.SINGULARITY_TMPDIR
