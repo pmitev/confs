@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+script_path = os.path.dirname(__file__)
 
 try:
   __IPYTHON__
@@ -8,7 +11,7 @@ try:
 except:
   print ("")  
 
-data= pd.read_csv("kW.csv", index_col=0)
+data= pd.read_csv(script_path + "/kW.csv", index_col=0)
 
 plt.style.use('seaborn')
 data.T.plot(kind="bar")
