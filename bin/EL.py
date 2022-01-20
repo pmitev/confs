@@ -13,8 +13,9 @@ plt.style.use('seaborn')
 
 data= pd.read_csv("EL.csv", index_col=0,parse_dates=True)
 data.index= pd.to_datetime(data.index)
+pd.set_option('max_rows', None)
 print ( data.groupby(by=[data.index.year,data.index.month]).sum() )
-#print data.groupby(by=[data.index.year]).sum()
+print ( data.groupby(by=[data.index.year]).sum() )
 
 
 
