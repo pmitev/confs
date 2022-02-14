@@ -38,6 +38,8 @@ alias lt='ls -lrt --color=auto'
 #alias la='ls -A --color=auto'
 #alias l='ls -CF --color=auto'
 
+alias cdd='cd "$(ls -dt */ | head -1)"'
+
 alias xc='xclip-copyfile'
 alias xp='xclip-pastefile'
 alias xo='xclip -o'
