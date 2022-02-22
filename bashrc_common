@@ -209,9 +209,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     pathappend $HOME/.local/bin
 fi
-
-if [ -d "$HOME/env" ] ; then
-    pathappend $HOME/env
-fi
 #.#
 #=================================================================
