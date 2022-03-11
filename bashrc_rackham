@@ -23,6 +23,8 @@ export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/conda_envs
 export UDOCKER_DIR=/crex/proj/staff/pmitev/udocker
 export PROOT_NO_SECCOMP=1
 
+export VGL_CLIENT=$DISPLAY
+
 function jiu() { jobinfo -u ${1:-$USER} ; }
 function scs() { scontrol show jobid=${1:-1} ; }
 function scsv() { scontrol show --details --details jobid=${1:-1} ; }
