@@ -1,0 +1,34 @@
+# https://enccs.github.io/HPDA-Python/setup/
+# conda env create -f https://raw.githubusercontent.com/ENCCS/HPDA-Python/main/content/env/environment.yml
+name: pyhpda
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - numpy
+  - scipy
+  - pandas
+  - cython
+  - numba
+  - cudatoolkit
+  - cupy
+  - h5py
+  - hdf5
+  - netcdf4 
+  - matplotlib
+  - dask
+  - graphviz
+  - python-graphviz
+  - ipywidgets
+  - widgetsnbextension 
+  - dask-jobqueue
+  - dask-labextension   
+  - snakemake-minimal
+  - ipyparallel
+  - xarray
+  - jupyter
+  - jupyterlab
+  - pip
+  - pip:
+    - line_profiler
