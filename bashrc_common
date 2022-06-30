@@ -23,8 +23,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 #export XKEYSYMDB=/usr/share/X11/XKeysymDB  # xmgrace related
 
-bind '"\e[5~": history-search-backward'
-bind '"\e[6~": history-search-forward'
+if [ -t 1 ]; then
+  bind '"\e[5~": history-search-backward'
+  bind '"\e[6~": history-search-forward'
+fi
 #bind '"\M-[3~": delete-char'
 
 # Vi in command line
