@@ -43,6 +43,8 @@ alias lt='ls -lrt --color=auto'
 alias cdd='cd "$(ls -dt */ | head -1)"'
 alias pwdm='pwd > $HOME/.pwdmark'
 alias cdm='cd $(cat $HOME/.pwdmark)'
+alias dirsw='dirs > $HOME/.dirsm'
+alias dirsr='for i in $(cat $HOME/.dirsm); do pushd -n $i > /dev/null ; done'
 
 alias xc='xclip-copyfile'
 alias xp='xclip-pastefile'
