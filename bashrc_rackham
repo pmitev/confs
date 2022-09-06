@@ -17,6 +17,10 @@ export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 export SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/.SINGULARITY_CACHEDIR
 export SINGULARITY_TMPDIR=/crex/proj/staff/pmitev/.SINGULARITY_TMPDIR
 
+# dbdeployer settings
+export SANDBOX_HOME=/crex/proj/staff/pmitev/nobackup/sandbox_home
+export SANDBOX_HOME=/crex/proj/staff/pmitev/nobackup/sandbox_binary
+
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/conda_envs
 #export CONDA_PKGS_DIRS=
 
