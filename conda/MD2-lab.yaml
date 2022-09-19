@@ -1,0 +1,16 @@
+# conda env create -f ~/GIT/confs/conda/MD2-lab.yaml
+name: MD2-lab
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>3.7
+  - ipython
+  - ase
+  - lammps
+  - vmd
+  - gnuplot
+  - imagemagick 
+  - pip
+#  - pip:
+#    - jupyterlab-github==2.0.0
