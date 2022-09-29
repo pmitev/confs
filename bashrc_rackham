@@ -24,6 +24,8 @@ export SANDBOX_BINARY=/crex/proj/staff/pmitev/nobackup/sandbox_binary
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/conda_envs
 #export CONDA_PKGS_DIRS=
 
+export NXF_HOME=/crex/proj/staff/pmitev/nobackup/NXF_HOME
+
 export UDOCKER_DIR=/crex/proj/staff/pmitev/udocker
 export PROOT_NO_SECCOMP=1
 
