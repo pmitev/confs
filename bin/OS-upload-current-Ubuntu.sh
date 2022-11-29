@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CMD_qemu_cmd="qemu-img"
-CMD_qemu_cmd="singularity exec /crex/proj/staff/pmitev/nobackup/sbin/qemu-utils.sif qemu-img"
+#CMD_qemu_cmd="singularity exec /crex/proj/staff/pmitev/nobackup/sbin/qemu-utils.sif qemu-img"
 
 
 TMP_DIR=$(mktemp -d) && \
