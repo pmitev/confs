@@ -35,8 +35,8 @@ set foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\|\|(getline(v:lnum+
 map \z :set foldmethod=expr foldlevel=0 foldcolumn=1<CR>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
-"set expandtab
-"set expandtab shiftwidth=2 softtabstop=2 smarttab
+set expandtab
+set expandtab shiftwidth=2 softtabstop=2 smarttab
 map <F12> :w<CR>:!./%<CR>
 map <f11> :set fdc=2<CR>:set fdm=indent<CR>
 "set number
