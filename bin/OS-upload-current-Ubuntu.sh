@@ -9,6 +9,6 @@ cd ${TMP_DIR} && echo "TMP_DIR: "${TMP_DIR} && \
 wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img && \
 ${CMD_qemu_cmd} convert -p -f qcow2 -O raw focal-server-cloudimg-amd64.img  focal-server-cloudimg-amd64.raw && \
 IMAGE_NAME=$(date -r focal-server-cloudimg-amd64.img +"Ubuntu 20.04 - %Y.%m.%d") && \
-openstack image create --min-disk 20 --private --file focal-server-cloudimg-amd64.raw "${IMAGE_NAME}" && \
+openstack image create --progress --min-disk 20 --private --file focal-server-cloudimg-amd64.raw "${IMAGE_NAME}" && \
 cd -
 
