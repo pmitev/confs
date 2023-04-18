@@ -104,7 +104,9 @@ pathclean () {
         export PATH=$( python -c "import os; path = os.environ['PATH'].split(':'); print(':'.join(sorted(set(path), key=path.index)))" )
 }
 
+
 calc() { echo print "$@" | gnuplot; }
+mkdircd(){ mkdir "$1" && cd "$1" ; }
 
 # This function defines a 'cd' replacement function capable of keeping,
 # displaying and accessing history of visited directories, up to 10 entries.
