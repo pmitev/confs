@@ -67,6 +67,9 @@ alias du='du -h --max-depth=1'
 alias psp='ps -efw | grep $USER'
 alias ngit='git --no-pager'
 
+alias nextflow-clean-but-last='nextflow clean -f -before $(nextflow log -q | tail -n 1)'
+alias nextflow-clean-all='nextflow clean -f -before $(nextflow log -q | tail -n 1); nextflow clean -f'
+
 alias Uppsala='curl wttr.in/Uppsala?MF'
 #.#
 #=================================================================
