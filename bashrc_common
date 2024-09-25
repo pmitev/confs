@@ -40,6 +40,7 @@ alias lt='ls -lrt --color=auto'
 #alias la='ls -A --color=auto'
 #alias l='ls -CF --color=auto'
 
+alias cdrp='cd $(realpath .)'
 alias cdd='cd "$(ls -dt */ | head -1)"'
 alias pwdm='pwd > $HOME/.pwdmark'
 alias cdm='cd $(cat $HOME/.pwdmark)'
