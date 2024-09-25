@@ -1,5 +1,6 @@
 #!/bin/bash
 # source of the script
+# https://www.eessi.io/docs/getting_access/eessi_container/
 # https://github.com/EESSI/eessi-demo/blob/main/scripts/start_singularity_eessi_pilot.sh
 
 # honor $TMPDIR if it is already defined, use /tmp otherwise

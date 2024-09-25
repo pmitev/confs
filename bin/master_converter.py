@@ -1,3 +1,4 @@
+#!/home/pmitev/venv/ase/bin/python3
 #!/usr/bin/env python3
 #
 # Converts between between different structure formats supported by ASE.

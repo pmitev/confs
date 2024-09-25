@@ -22,7 +22,7 @@ BEGIN{
 
   $0= gensub(/(^|[[ ]){1}(OK|Ok)([] ]|$){1}/,           "\\1"c[2]"\\2"cn"\\3",  "g") # OK - special case
 
-  gsub(/[&@][A-Za-z_]+/,                                  c[3]"&"cn)  # @& 
+  #gsub(/[@&][A-Za-z_]+/,                                  c[3]"&"cn)  # @& 
   gsub(/^#SBATCH.*$/,                                     c[6]"&"cn)  # SBATCH
   gsub(/^#.*$/,                                           c[4]"&"cn)  # comment
 
