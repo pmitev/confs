@@ -3,6 +3,7 @@ APTpackages:
   - build-essential
   - ccache  
   - cmake
+  - default-jre
   - fail2ban
   - gfortran
   - git
