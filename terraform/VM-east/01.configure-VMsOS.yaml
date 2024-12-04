@@ -1,0 +1,49 @@
+- hosts: VM
+  debugger: on_failed
+  vars_files:
+    - ansible-vars.yaml
+  become: yes
+  tasks:
+
+  - name: Upgrade the OS (apt-get dist-upgrade)
+    ansible.builtin.apt:
+      upgrade: dist
+      update_cache: true
+    tags:
+    - os
+    - apt
+
+  - name: Install packages
+    ansible.builtin.apt:
+      name: "{{ APTpackages }}"
+      state: latest
+      update_cache: true
+      clean: true
+      autoclean: true
+      autoremove: true
+    tags:
+    - os
+    - apt
+
+  - name: Install Docker
+    ansible.builtin.shell:
+      cmd: | 
+        export DEBIAN_FRONTEND=noninteractive
+        wget -qO- https://get.docker.com/ | sh
+        usermod -aG docker ubuntu
+        # Some fixes
+        modprobe br_netfilter
+        echo br_netfilter > /etc/modules-load.d/br_netfilter.conf
+        sysctl net.bridge.bridge-nf-call-iptables=1
+        sysctl net.bridge.bridge-nf-call-ip6tables=1
+        echo "net.bridge.bridge-nf-call-iptables = 1"  >> /etc/sysctl.conf
+        echo "net.bridge.bridge-nf-call-ip6tables = 1" >> /etc/sysctl.conf
+        systemctl restart docker.service
+    tags:
+    - docker
+
+  - name: Install Singularity
+    ansible.builtin.apt:
+      deb: https://github.com/sylabs/singularity/releases/download/v4.2.1/singularity-ce_4.2.1-jammy_amd64.deb
+    tags:
+    - singularity

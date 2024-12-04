@@ -38,7 +38,7 @@ resource "openstack_compute_floatingip_associate_v2" "vm" {
   instance_id = openstack_compute_instance_v2.vm.id
 
   provisioner "local-exec" {
-    command = "echo Instance_IP_addr '${openstack_networking_floatingip_v2.vm.address}' | tee log.txt"
+    command = "echo 'localhost ansible_connection=local\nVM ansible_host=${openstack_networking_floatingip_v2.vm.address} ansible_user=ubuntu' | tee hosts"
   }
 }
 
@@ -46,16 +46,16 @@ output "instance_ip_addr" {
   value = openstack_networking_floatingip_v2.vm.address
 }
 
-resource "local_file" "log" {
-  content         = "instance_ip_addr: ${openstack_networking_floatingip_v2.vm.address}\n"
+resource "local_file" "hosts" {
+  content         = "localhost ansible_connection=local\nVM ansible_host=${openstack_networking_floatingip_v2.vm.address} ansible_user=ubuntu\n"
   file_permission = "0644"
-  filename        = "log.txt"
+  filename        = "hosts"
 }
 
 resource "null_resource" "local_run" {
   triggers = { always_run = "${timestamp()}" }
   provisioner "local-exec" {
-    command = "echo Instance_IP_addr: '${openstack_networking_floatingip_v2.vm.address}' | tee -a log.txt"
+    command = "echo 'localhost ansible_connection=local\nVM ansible_host=${openstack_networking_floatingip_v2.vm.address} ansible_user=ubuntu' | tee hosts"
   }
 }
 
