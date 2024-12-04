@@ -25,6 +25,15 @@
     - os
     - apt
 
+  - name: Start Fail2ban service
+    ansible.builtin.service:
+      name: fail2ban
+      state: started
+      enabled: yes
+    tags:
+    - os
+    - fail2ban
+
   - name: Install Docker
     ansible.builtin.shell:
       cmd: | 

@@ -14,7 +14,7 @@ resource "openstack_compute_instance_v2" "vm" {
     source_type           = "image"
     destination_type      = "volume"
     boot_index            = 0
-    volume_size           = 100
+    volume_size           = 300
     delete_on_termination = true
   }
 
