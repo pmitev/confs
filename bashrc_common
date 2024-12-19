@@ -75,6 +75,9 @@ alias nextflow-clean-but-last='nextflow clean -f -before $(nextflow log -q | tai
 alias nextflow-clean-all='nextflow clean -f -before $(nextflow log -q | tail -n 1); nextflow clean -f'
 
 alias Uppsala='curl wttr.in/Uppsala?MF'
+
+alias google-chrome='google-chrome --save-page-as-mhtml'
+
 #.#
 #=================================================================
 
