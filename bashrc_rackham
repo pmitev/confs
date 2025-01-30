@@ -21,6 +21,10 @@ if [[ $(hostname) != "transit.uppmax.uu.se" ]]; then
   export APPTAINER_TMPDIR=/crex/proj/staff/pmitev/nobackup/.SINGULARITY_TMPDIR
 
   export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
+  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
+
+  export PIXI_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
+  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
 fi
 
 
