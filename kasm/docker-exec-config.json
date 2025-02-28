@@ -1,0 +1,16 @@
+{
+  "first_launch": {
+    "cmd": "bash /tmp/install.sh",
+    "environment": {
+      "FOO": "BAR"
+    },
+    "user": "root"
+  },
+  "assign": {
+    "cmd": "bash /tmp/install.sh",
+    "environment": {
+      "FOO": "BAR"
+    },
+    "user": "root"
+  }
+}

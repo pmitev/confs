@@ -1,0 +1,7 @@
+{
+  "hostname": "kasm",
+  "environment": {
+    "KASM_PROFILE_SIZE_LIMIT": "32000000",
+    "FOO": "BAR"
+  }
+}
