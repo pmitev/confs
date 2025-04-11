@@ -1,0 +1,8 @@
+git clone https://github.com/kasmtech/workspaces-images.git
+
+# build
+docker build -t pmitev/kasm-tools:0.3 -f ./dockerfile-kasm-ubuntu-noble-desktop-pmitev .
+
+# test locally
+docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password pmitev/kasm-tools:0.3
+

@@ -30,13 +30,21 @@ RUN apt-get update && apt-get install -y gawk git wget vim less mc \
     rootlesskit rpm2cpio cpio bzip2 
 
 # Nextflow
-RUN cd /usr/bin && wget https://github.com/nextflow-io/nextflow/releases/download/v24.10.4/nextflow-24.10.4-dist && chmod a+rx /usr/bin/nextflow-24.10.4-dist && ln -s nextflow-24.10.4-dist nextflow
+RUN cd /usr/bin && wget https://github.com/nextflow-io/nextflow/releases/download/v24.10.5/nextflow-24.10.5-dist && chmod a+rx /usr/bin/nextflow-24.10.5-dist && ln -s nextflow-24.10.5-dist nextflow
 
 # nf-core
 RUN python3 -m pip install --no-cache-dir --break-system-packages nf-core
 
+
 # Apptainer
-RUN cd /tmp && wget https://github.com/apptainer/apptainer/releases/download/v1.3.5/apptainer_1.3.5_amd64.deb && apt install -y ./apptainer_1.3.5_amd64.deb && rm apptainer_1.3.5_amd64.deb && apt clean
+RUN cd /tmp && wget https://github.com/apptainer/apptainer/releases/download/v1.4.0/apptainer_1.4.0_amd64.deb && apt install -y ./apptainer_1.4.0_amd64.deb && rm apptainer_1.4.0_amd64.deb && apt clean
+
+
+# miniforge
+RUN cd /opt && \
+    curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
+    bash Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/miniforge3
+
 
 # Run installations
 RUN \
@@ -50,8 +58,11 @@ RUN \
   chown -R 1000:0 /home/kasm-user && \
   rm -Rf ${INST_DIR}
 
+RUN bash -c 'echo -e "\nsource /opt/miniforge3/etc/profile.d/conda.sh\nsource /opt/miniforge3/etc/profile.d/mamba.sh" >> ${STARTUPDIR}/generate_container_user'
+
 # Userspace Runtime
 ENV HOME /home/kasm-user
+ENV PATH $PATH:/opt/miniforge3/condabin
 WORKDIR $HOME
 USER 1000
 
