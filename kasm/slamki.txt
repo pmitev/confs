@@ -6,3 +6,6 @@ docker build -t pmitev/kasm-tools:0.3 -f ./dockerfile-kasm-ubuntu-noble-desktop-
 # test locally
 docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password pmitev/kasm-tools:0.3
 
+User : kasm_user
+Password: password
+
