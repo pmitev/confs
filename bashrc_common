@@ -77,6 +77,7 @@ alias nextflow-clean-all='nextflow clean -f -before $(nextflow log -q | tail -n 
 alias Uppsala='curl wttr.in/Uppsala?MF'
 
 alias google-chrome='google-chrome --save-page-as-mhtml'
+alias cweek='date +"Current week: %V"'
 
 #.#
 #=================================================================
