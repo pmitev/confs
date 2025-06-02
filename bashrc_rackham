@@ -12,6 +12,7 @@ alias mc='source /crex/proj/staff/pmitev/nobackup/.PIXI_HOME/envs/mc/libexec/mc/
 alias srunR='srun -A staff          -t 15:00 -p devel'
 alias srunS='srun -A staff -M snowy -t 15:00 -p devel'
 alias bashS='srun -A staff -M snowy -t 15:00 -p devel --pty bash'
+alias moduleon='module use /sw/arch/eb/modules/all/'
 
 if [[ $(hostname) != "transit"* || $(hostname) != "pelle"* ]]; then 
   export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
@@ -21,11 +22,12 @@ if [[ $(hostname) != "transit"* || $(hostname) != "pelle"* ]]; then
   export APPTAINER_CACHEDIR=/crex/proj/staff/pmitev/nobackup/.SINGULARITY_CACHEDIR
   export APPTAINER_TMPDIR=/crex/proj/staff/pmitev/nobackup/.SINGULARITY_TMPDIR
 
-  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
-  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
+#  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
+#  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
 
-  export PIXI_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
-  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
+#  export PIXI_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
+#  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
+
 fi
 
 
