@@ -78,6 +78,7 @@ alias Uppsala='curl wttr.in/Uppsala?MF'
 
 alias google-chrome='google-chrome --save-page-as-mhtml'
 alias cweek='date +"Current week: %V"'
+alias cal='ncal -bwMA2'
 alias kubectl="minikube kubectl --"
 
 #.#
