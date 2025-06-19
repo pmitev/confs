@@ -13,6 +13,7 @@ alias srunR='srun -A staff          -t 15:00 -p devel'
 alias srunS='srun -A staff -M snowy -t 15:00 -p devel'
 alias bashS='srun -A staff -M snowy -t 15:00 -p devel --pty bash'
 alias moduleon='module use /sw/arch/eb/modules/all/'
+alias cal='cal -mw3'
 
 if [[ $(hostname) != "transit"* || $(hostname) != "pelle"* ]]; then 
   export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
