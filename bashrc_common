@@ -59,7 +59,8 @@ alias yd='youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaud
 alias bssh='ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR '
 alias bscp='scp -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR '
 
-alias mc='source /usr/lib/mc/mc-wrapper.sh'
+#alias mc='source /usr/lib/mc/mc-wrapper.sh'
+alias mc='source ~/.pixi/envs/mc/libexec/mc/mc-wrapper.sh'
 alias xmgrace='xmgrace -geometry 1230x900'
 
 alias beep='echo -en "\007"'
