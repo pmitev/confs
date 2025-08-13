@@ -62,6 +62,7 @@ alias bscp='scp -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -o 
 #alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias mc='source ~/.pixi/envs/mc/libexec/mc/mc-wrapper.sh'
 alias xmgrace='xmgrace -geometry 1230x900'
+alias ncdu='ncdu --color=dark'
 
 alias beep='echo -en "\007"'
 alias rpminfo='rpm -qivlp --scripts'
