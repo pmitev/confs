@@ -29,8 +29,8 @@ if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then
 
 fi
 
-export APPTAINER_CACHEDIR=/scratch/pmitev/.SINGULARITY_CACHEDIR
-#export APPTAINER_TMPDIR=/scratch/pmitev/.SINGULARITY_TMPDIR
+export APPTAINER_CACHEDIR=/tmp/pmitev/.SINGULARITY_CACHEDIR
+#export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
 mkdir -p $APPTAINER_CACHEDIR #$APPTAINER_TMPDIR
 
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
