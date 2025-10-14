@@ -18,20 +18,17 @@ alias cal='cal -mw3'
 if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then 
   export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
-  export APPTAINER_CACHEDIR=/crex/proj/staff/pmitev/nobackup/.SINGULARITY_CACHEDIR
-  export APPTAINER_TMPDIR=/crex/proj/staff/pmitev/nobackup/.SINGULARITY_TMPDIR
+  export APPTAINER_CACHEDIR=/tmp/pmitev/.SINGULARITY_CACHEDIR
+#  export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
+  mkdir -p $APPTAINER_CACHEDIR #$APPTAINER_TMPDIR
 
 #  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
 #  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
 
 #  export PIXI_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
 #  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
-
 fi
 
-export APPTAINER_CACHEDIR=/tmp/pmitev/.SINGULARITY_CACHEDIR
-#export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
-mkdir -p $APPTAINER_CACHEDIR #$APPTAINER_TMPDIR
 
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
