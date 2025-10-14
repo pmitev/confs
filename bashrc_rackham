@@ -19,8 +19,8 @@ if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then
   export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
   export APPTAINER_CACHEDIR=/tmp/pmitev/.SINGULARITY_CACHEDIR
-#  export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
-  mkdir -p $APPTAINER_CACHEDIR #$APPTAINER_TMPDIR
+  export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
+  mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
 #  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
 #  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
