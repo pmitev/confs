@@ -36,8 +36,8 @@ fi
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
 
-export NXF_HOME=/crex/proj/staff/pmitev/nobackup/NXF_HOME
-export NXF_SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/nobackup/NXF_SINGULARITY_CACHEDIR
+#export NXF_HOME=/crex/proj/staff/pmitev/nobackup/NXF_HOME
+#export NXF_SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/nobackup/NXF_SINGULARITY_CACHEDIR
 
 #export UDOCKER_DIR=/crex/proj/staff/pmitev/udocker
 #export PROOT_NO_SECCOMP=1
