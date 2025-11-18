@@ -32,6 +32,12 @@ if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then
 #  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
 fi
 
+if [[ $(hostname) == "rackham5"* ]]; then 
+  export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
+  export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
+  mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
+fi
+
 
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
