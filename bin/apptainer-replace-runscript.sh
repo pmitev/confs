@@ -21,7 +21,7 @@ From: ${FROM}\n\
 
 echo "[I]: container.def in: ${tmpfile}" | tee ${logfile}
 echo "[I]: ${line}" | tee -a ${logfile}
-echo -e ${DEF} | tee ${tmpfile} | tee -a ${logfile}
+echo -e "${DEF}" | tee ${tmpfile} | tee -a ${logfile}
 echo -e "[I]: ${line}\n" | tee -a ${logfile}
 
 apptainer build container.sif ${tmpfile} |& tee -a ${logfile}
