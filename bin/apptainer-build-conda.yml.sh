@@ -10,11 +10,16 @@ DEF="BootStrap: docker\n\
 From: mambaorg/micromamba:1.5.10-noble\n\
 \n\
 %environment\n\
+  export PYTHONNOUSERSITE=True\n\
   export PATH=\"\$MAMBA_ROOT_PREFIX/bin:\$PATH\"\n\
 \n\
 %post\n\
-  cat << EOF > /scratch/conda.yml\n\
-  "${inpyml}"
+  export PYTHONNOUSERSITE=True\n\
+  export DEBIAN_FRONTEND=noninteractive\n\
+  export CONDA_PKGS_DIRS=/tmp/conda_pkgs && mkdir -p \${CONDA_PKGS_DIRS}\n\
+\n\
+cat << EOF > /scratch/conda.yml\n\
+"${inpyml}"
 #EOF
 
   micromamba install -y -n base -f /scratch/conda.yml\n\
@@ -42,5 +47,3 @@ echo -e ${DEF} | tee ${tmpfile} | tee -a ${logfile}
 echo -e "[I]: ${line}\n" | tee -a ${logfile}
 
 apptainer build container.sif ${tmpfile} |& tee -a ${logfile}
-
-
