@@ -14,7 +14,7 @@ From: ${FROM}\n\
 %runscript\n\
 #!/bin/sh\n\
   if command -v \$SINGULARITY_NAME > /dev/null 2> /dev/null; then\n\
-    exec $SINGULARITY_NAME \"\$@\"\n\
+    exec \$SINGULARITY_NAME \"\$@\"\n\
   else\n\
     echo \"# ERROR !!! Command $SINGULARITY_NAME not found in the container\"\n\
   fi"
