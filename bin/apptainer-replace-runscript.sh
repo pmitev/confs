@@ -19,9 +19,6 @@ From: ${FROM}\n\
     echo \"# ERROR !!! Command $SINGULARITY_NAME not found in the container\"\n\
   fi"
 
-echo -e ${DEF}
-exit
-
 echo "[I]: container.def in: ${tmpfile}" | tee ${logfile}
 echo "[I]: ${line}" | tee -a ${logfile}
 echo -e ${DEF} | tee ${tmpfile} | tee -a ${logfile}
