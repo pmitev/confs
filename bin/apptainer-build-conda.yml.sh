@@ -1,6 +1,7 @@
 #!/bin/bash
 
 inpfile=${1:-./conda.yml}
+inpyml=$(<"${inpfile}")
 tmpfile=$(mktemp /tmp/container.def.XXXXXX)
 logfile=${tmpfile/def/log}
 line="============================================="
@@ -8,13 +9,14 @@ line="============================================="
 DEF="BootStrap: docker\n\
 From: mambaorg/micromamba:1.5.10-noble\n\
 \n\
-%files\n\
-  ${inpfile} /scratch/conda.yml\n\
-\n\
 %environment\n\
   export PATH=\"\$MAMBA_ROOT_PREFIX/bin:\$PATH\"\n\
 \n\
 %post\n\
+  cat << EOF > /scratch/conda.yml\n\
+  "${inpyml}"
+#EOF
+
   micromamba install -y -n base -f /scratch/conda.yml\n\
   micromamba install -y -n base conda-forge::procps-ng\n\
   micromamba env export --name base --explicit > environment.lock\n\
