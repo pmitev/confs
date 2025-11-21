@@ -120,7 +120,8 @@ pathclean () {
 }
 
 
-calc() { echo print "$@" | gnuplot; }
+#calc() { echo print "$@" | gnuplot; }
+calc() { python3 -c "from math import *; print(""$*"")"; }
 mkdircd(){ mkdir "$1" && cd "$1" ; }
 
 # This function defines a 'cd' replacement function capable of keeping,
