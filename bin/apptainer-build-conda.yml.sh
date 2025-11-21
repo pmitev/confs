@@ -17,18 +17,18 @@ From: mambaorg/micromamba:1.5.10-noble\n\
   export PYTHONNOUSERSITE=True\n\
   export DEBIAN_FRONTEND=noninteractive\n\
   export CONDA_PKGS_DIRS=/tmp/conda_pkgs && mkdir -p \${CONDA_PKGS_DIRS}\n\
+  export PIP_CACHE_DIR=/tmp/pip-cache && mkdir -p \${PIP_CACHE_DIR}\n\
 \n\
-cat << EOF > /scratch/conda.yml\n\
-"${inpyml}"
-#EOF
-
-  micromamba install -y -n base -f /scratch/conda.yml\n\
+mkdir -p /install\n\
+cat << EOF > /install/conda.yml\n\
+"${inpyml}"\n\
+EOF\
+\n\
+\n\
+  micromamba install -y -n base -f /install/conda.yml\n\
   micromamba install -y -n base conda-forge::procps-ng\n\
-  micromamba env export --name base --explicit > environment.lock\n\
-  echo \">> CONDA_LOCK_START\"\n\
-  cat environment.lock\n\
-  echo \"<< CONDA_LOCK_END\"\n\
-  micromamba clean -a -y\n\
+  micromamba env export --name base --explicit > /install/environment.lock\n\
+  #micromamba clean -a -y\n\
 \n\
 %runscript\n\
 #!/bin/sh\n\
@@ -38,12 +38,9 @@ cat << EOF > /scratch/conda.yml\n\
     echo \"# ERROR !!! Command $SINGULARITY_NAME not found in the container\"\n\
   fi"
 
-echo -e "${DEF}"
-exit
-
 echo "[I]: container.def in: ${tmpfile}" | tee ${logfile}
 echo "[I]: ${line}" | tee -a ${logfile}
-echo -e ${DEF} | tee ${tmpfile} | tee -a ${logfile}
+echo -e "${DEF}" | tee ${tmpfile} | tee -a ${logfile}
 echo -e "[I]: ${line}\n" | tee -a ${logfile}
 
 apptainer build container.sif ${tmpfile} |& tee -a ${logfile}
