@@ -21,10 +21,6 @@ alias sinteractive='salloc -A staff -t 6:00:00 --x11 srun --pty /bin/bash'
 if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then 
   export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
-  export APPTAINER_CACHEDIR=/tmp/pmitev/.SINGULARITY_CACHEDIR
-  export APPTAINER_TMPDIR=/tmp/pmitev/.SINGULARITY_TMPDIR
-  mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
-
 #  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
 #  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
 
@@ -32,12 +28,9 @@ if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then
 #  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
 fi
 
-if [[ $(hostname) == "rackham5"* ]]; then 
-  export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
-  export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
-  mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
-fi
-
+export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
+export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
+mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
