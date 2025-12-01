@@ -7,7 +7,8 @@
 #fi
 
 #alias mc='source /usr/libexec/mc/mc-wrapper.sh'
-alias mc='source /crex/proj/staff/pmitev/nobackup/.PIXI_HOME/envs/mc/libexec/mc/mc-wrapper.sh'
+#alias mc='source /crex/proj/staff/pmitev/nobackup/.PIXI_HOME/envs/mc/libexec/mc/mc-wrapper.sh'
+alias mc='source /sw/generic/pixi-tools/envs/mc/libexec/mc/mc-wrapper.sh'
 #alias ll='ls -l --group-directories-first'
 alias srunP='srun -A staff          -t 15:00'
 alias bashP='srun -A staff          -t 15:00 --x11 --pty /bin/bash'
