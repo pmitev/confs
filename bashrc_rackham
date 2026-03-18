@@ -37,6 +37,8 @@ mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
 
+export OLLAMA_MODELS=/crex/proj/staff/pmitev/nobackup/ollama_models
+
 #export NXF_HOME=/crex/proj/staff/pmitev/nobackup/NXF_HOME
 #export NXF_SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/nobackup/NXF_SINGULARITY_CACHEDIR
 
