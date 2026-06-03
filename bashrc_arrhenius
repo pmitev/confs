@@ -4,6 +4,7 @@
 
 alias srunC='srun -A staff                                -t 60:00 --x11 --pty /bin/bash'
 alias srunG='srun -A naiss2026-3-418-gpu -p gpu  --gpus 1 -t 60:00 --x11 --pty /bin/bash'
+alias mc='source /usr/libexec/mc/mc-wrapper.sh'
 
 export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
 export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
