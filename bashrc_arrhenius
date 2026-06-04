@@ -13,6 +13,40 @@ mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 #export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
 #export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
 
+PROJFOLDER=/nobackup/proj/disk/support_staff/personal/pmitev
+
+ARCH=$(uname -m)
+if [ $ARCH == "aarch64" ]; then
+  export APPTAINER_NV=true
+
+  pathremove /home/pmitev/.pixi/bin
+  pathremove /home/pmitev/bin
+
+  export PIXI_HOME="$PROJFOLDER/.PIXI_HOME_arm"
+  export PIXI_CACHE_DIR="$PROJFOLDER/.PIXI_CACHE_DIR_arm"
+  export PATH="$PROJFOLDER/.PIXI_HOME_arm/bin:$PATH"
+
+  export UV_INSTALL_DIR="$PROJFOLDER/uv-arm"
+  export UV_PYTHON_INSTALL_DIR="$PROJFOLDER/uv-arm/python"
+  export UV_TOOL_DIR="$PROJFOLDER/uv-arm/tool"
+  export UV_TOOL_BIN_DIR="$PROJFOLDER/uv-arm/tool_bin"
+  export UV_CACHE_DIR="$PROJFOLDER/uv-arm/cache"
+
+  source "/nobackup/proj/disk/support_staff/personal/pmitev/uv-arm/env"
+
+else
+  export PIXI_CACHE_DIR="$PROJFOLDER/.PIXI_CACHE_DIR"
+  export PIXI_HOME="$PROJFOLDER/.PIXI_HOME"
+  export PATH="/home/pmitev/.pixi/bin:$PATH"
+
+  export UV_INSTALL_DIR="$PROJFOLDER/uv"
+  export UV_PYTHON_INSTALL_DIR="$PROJFOLDER/uv/python"
+  export UV_TOOL_DIR="$PROJFOLDER/uv/tool"
+  export UV_TOOL_BIN_DIR="$PROJFOLDER/uv/tool_bin"
+  export UV_CACHE_DIR="$PROJFOLDER/uv/cache"
+fi
+mkdir -p $PIXI_CACHE_DIR $PIXI_HOME $UV_CACHE_DIR $UV_TOOL_DIR
+
 
 
 function jiu()  { jobinfo -u ${1:-$USER} ; }
