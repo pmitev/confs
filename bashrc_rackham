@@ -21,7 +21,7 @@ alias sinteractive='salloc -A staff -t 6:00:00 --x11 srun --pty /bin/bash'
 #alias stui='stui -job-columns-config "UserId,NumCPUs,Mem,NodeList,JobName++,RunTime,Comment"'
 
 if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then 
-  export XDG_CACHE_HOME=/crex/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
+  export XDG_CACHE_HOME=/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
 #  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
 #  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
