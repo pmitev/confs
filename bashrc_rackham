@@ -7,7 +7,7 @@
 #fi
 
 #alias mc='source /usr/libexec/mc/mc-wrapper.sh'
-#alias mc='source /crex/proj/staff/pmitev/nobackup/.PIXI_HOME/envs/mc/libexec/mc/mc-wrapper.sh'
+#alias mc='source /proj/staff/pmitev/nobackup/.PIXI_HOME/envs/mc/libexec/mc/mc-wrapper.sh'
 alias mc='source /sw/generic/pixi-tools/envs/mc/libexec/mc/mc-wrapper.sh'
 #alias ll='ls -l --group-directories-first'
 alias srunP='srun -A staff          -t 15:00'
@@ -23,26 +23,26 @@ alias sinteractive='salloc -A staff -t 6:00:00 --x11 srun --pty /bin/bash'
 if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then 
   export XDG_CACHE_HOME=/proj/staff/pmitev/nobackup/XDG_CACHE_HOME
 
-#  export UV_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
-#  export UV_TOOL_DIR=/crex/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
+#  export UV_CACHE_DIR=/proj/staff/pmitev/nobackup/.UV_CACHE_DIR
+#  export UV_TOOL_DIR=/proj/staff/pmitev/nobackup/.UV_TOOL_DIR
 
-#  export PIXI_CACHE_DIR=/crex/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
-#  export PIXI_HOME=/crex/proj/staff/pmitev/nobackup/.PIXI_HOME
+#  export PIXI_CACHE_DIR=/proj/staff/pmitev/nobackup/.PIXI_CACHE_DIR
+#  export PIXI_HOME=/proj/staff/pmitev/nobackup/.PIXI_HOME
 fi
 
 export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
 export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
 mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
-export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
-export CONDA_PKGS_DIRS=/crex/proj/staff/pmitev/nobackup/CONDA_PKGS
+export CONDA_ENVS_PATH=/proj/staff/pmitev/nobackup/CONDA_ENVS
+export CONDA_PKGS_DIRS=/proj/staff/pmitev/nobackup/CONDA_PKGS
 
-export OLLAMA_MODELS=/crex/proj/staff/pmitev/nobackup/ollama_models
+export OLLAMA_MODELS=/proj/staff/pmitev/nobackup/ollama_models
 
-#export NXF_HOME=/crex/proj/staff/pmitev/nobackup/NXF_HOME
-#export NXF_SINGULARITY_CACHEDIR=/crex/proj/staff/pmitev/nobackup/NXF_SINGULARITY_CACHEDIR
+#export NXF_HOME=/proj/staff/pmitev/nobackup/NXF_HOME
+#export NXF_SINGULARITY_CACHEDIR=/proj/staff/pmitev/nobackup/NXF_SINGULARITY_CACHEDIR
 
-#export UDOCKER_DIR=/crex/proj/staff/pmitev/udocker
+#export UDOCKER_DIR=/proj/staff/pmitev/udocker
 #export PROOT_NO_SECCOMP=1
 
 #export VGL_CLIENT=$DISPLAY
