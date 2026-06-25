@@ -212,8 +212,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-test -s /usr/local/etc/bash_completion.d/singularity && source /usr/local/etc/bash_completion.d/singularity
-
 if [ ! -z $SINGULARITY_NAME ]; then
   export PS1="[S] "$PS1
 fi

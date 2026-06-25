@@ -32,12 +32,12 @@ if [ $ARCH == "aarch64" ]; then
   export UV_TOOL_BIN_DIR="$PROJFOLDER/uv-arm/tool_bin"
   export UV_CACHE_DIR="$PROJFOLDER/uv-arm/cache"
 
-  source "/nobackup/proj/disk/support_staff/personal/pmitev/uv-arm/env"
+  #source "/nobackup/proj/disk/support_staff/personal/pmitev/uv-arm/env"
 
 else
   export PIXI_CACHE_DIR="$PROJFOLDER/.PIXI_CACHE_DIR"
   export PIXI_HOME="$PROJFOLDER/.PIXI_HOME"
-  export PATH="/home/pmitev/.pixi/bin:$PATH"
+  export PATH="/home/pmitev/.pixi/bin:$PIXI_HOME/bin/:$PATH"
 
   export UV_INSTALL_DIR="$PROJFOLDER/uv"
   export UV_PYTHON_INSTALL_DIR="$PROJFOLDER/uv/python"
@@ -46,7 +46,6 @@ else
   export UV_CACHE_DIR="$PROJFOLDER/uv/cache"
 fi
 mkdir -p $PIXI_CACHE_DIR $PIXI_HOME $UV_CACHE_DIR $UV_TOOL_DIR
-
 
 
 function jiu()  { jobinfo -u ${1:-$USER} ; }
