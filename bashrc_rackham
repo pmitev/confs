@@ -30,8 +30,10 @@ if [[ $(hostname) != "transit"* || $(hostname) != "bianca"* ]]; then
 #  export PIXI_HOME=/proj/staff/pmitev/nobackup/.PIXI_HOME
 fi
 
-export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
-export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
+#export SINGULARITY_MKSQUASHFS_MAX_CPUS=8
+#export APPTAINER_MKSQUASHFS_OPTIONS="-processors 1 -mem 4G"
+export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR
+export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR
 mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
 export CONDA_ENVS_PATH=/proj/staff/pmitev/nobackup/CONDA_ENVS
