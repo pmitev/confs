@@ -6,8 +6,10 @@ alias srunC='srun -A staff                                -t 60:00 --x11 --pty /
 alias srunG='srun -A naiss2026-3-418-gpu -p gpu  --gpus 1 -t 60:00 --x11 --pty /bin/bash'
 alias mc='source /usr/libexec/mc/mc-wrapper.sh'
 
-export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR                        
-export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR                            
+#export APPTAINER_MKSQUASHFS_ARGS="-processors 24 -info -progress -mem 4G"
+export APPTAINER_MKSQUASHFS_ARGS="-mem 4G"
+export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR
+export APPTAINER_TMPDIR=/dev/shm/pmitev/.SINGULARITY_TMPDIR
 mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
 #export CONDA_ENVS_PATH=/crex/proj/staff/pmitev/nobackup/CONDA_ENVS
@@ -46,6 +48,8 @@ else
   export UV_CACHE_DIR="$PROJFOLDER/uv/cache"
 fi
 mkdir -p $PIXI_CACHE_DIR $PIXI_HOME $UV_CACHE_DIR $UV_TOOL_DIR
+
+export PATH="$UV_INSTALL_DIR:$PATH"
 
 
 function jiu()  { jobinfo -u ${1:-$USER} ; }
