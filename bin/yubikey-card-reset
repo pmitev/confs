@@ -2,3 +2,5 @@ eval "$(keychain --eval)"
 #eval "$(ssh-agent -s)"
 ssh-add -e /usr/lib/x86_64-linux-gnu/libykcs11.so
 ssh-add -s /usr/lib/x86_64-linux-gnu/libykcs11.so
+
+# apt install yubico-piv-tool ykcs11
