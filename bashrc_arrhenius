@@ -17,11 +17,14 @@ mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 
 PROJFOLDER=/nobackup/proj/disk/support_staff/personal/pmitev
 
+# Clean uv and pixi from $PATH
+export PATH=$(printf '%s' "$PATH" | tr ':' '\n' | grep -iv '/uv\|pixi' | paste -sd:)
+
 ARCH=$(uname -m)
 if [ $ARCH == "aarch64" ]; then
   export APPTAINER_NV=true
+  export XDG_CONFIG_HOME=$HOME/.config-arm
 
-  pathremove /home/pmitev/.pixi/bin
   pathremove /home/pmitev/bin
 
   export PIXI_HOME="$PROJFOLDER/.PIXI_HOME_arm"
@@ -39,7 +42,7 @@ if [ $ARCH == "aarch64" ]; then
 else
   export PIXI_CACHE_DIR="$PROJFOLDER/.PIXI_CACHE_DIR"
   export PIXI_HOME="$PROJFOLDER/.PIXI_HOME"
-  export PATH="/home/pmitev/.pixi/bin:$PIXI_HOME/bin/:$PATH"
+  export PATH="$PIXI_HOME/bin:$PATH"
 
   export UV_INSTALL_DIR="$PROJFOLDER/uv"
   export UV_PYTHON_INSTALL_DIR="$PROJFOLDER/uv/python"
