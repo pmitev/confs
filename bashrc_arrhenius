@@ -6,6 +6,7 @@ alias srunC='srun -A staff                                -t 60:00 --x11 --pty /
 alias srunG='srun -A naiss2026-3-418-gpu -p gpu  --gpus 1 -t 60:00 --x11 --pty /bin/bash'
 alias mc='source /usr/libexec/mc/mc-wrapper.sh'
 
+unset ${!SINGULARITY*}
 #export APPTAINER_MKSQUASHFS_ARGS="-processors 24 -info -progress -mem 4G"
 export APPTAINER_MKSQUASHFS_ARGS="-mem 4G"
 export APPTAINER_CACHEDIR=/dev/shm/pmitev/.SINGULARITY_CACHEDIR
