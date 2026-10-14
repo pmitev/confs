@@ -25,6 +25,7 @@ cat << EOF > /install/conda.yml\n\
 EOF\
 \n\
 \n\
+  mkdir -p \${CONDA_PKGS_DIRS}
   micromamba install -y -n base -f /install/conda.yml\n\
   micromamba install -y -n base conda-forge::procps-ng\n\
   micromamba env export --name base --explicit > /install/environment.lock\n\
