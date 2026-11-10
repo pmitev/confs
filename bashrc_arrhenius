@@ -29,6 +29,7 @@ if [ $ARCH == "aarch64" ]; then
   export XDG_CONFIG_HOME=$HOME/.config-arm
 
   pathremove /home/pmitev/bin
+  export PS1="\[\e]2;\h: \w\a\e[34;4m\]\h\[\e[0m\]:[\w]\n[\t]> "
 
   #export PIXI_HOME="$PROJFOLDER/.PIXI_HOME_arm"
   #export PIXI_CACHE_DIR="$PROJFOLDER/.PIXI_CACHE_DIR_arm"
