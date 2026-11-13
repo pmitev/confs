@@ -11,6 +11,7 @@ From: mambaorg/micromamba:1.5.10-noble\n\
 \n\
 %environment\n\
   export PYTHONNOUSERSITE=True\n\
+  export MAMBA_ROOT_PREFIX=/opt/conda\n\
   export PATH=\"\$MAMBA_ROOT_PREFIX/bin:\$PATH\"\n\
 \n\
 %post\n\
@@ -25,6 +26,8 @@ cat << EOF > /install/conda.yml\n\
 EOF\
 \n\
 \n\
+  micromamba install -y -n base conda-forge::which\n\
+  ln -sf "$MAMBA_ROOT_PREFIX/bin/which" /usr/bin/which\n\
   micromamba install -y -n base -f /install/conda.yml\n\
   micromamba install -y -n base conda-forge::procps-ng\n\
   micromamba env export --name base --explicit > /install/environment.lock\n\
